@@ -1,35 +1,21 @@
 {
-  "extends": "eslint:recommended",
-  "parser": "babel-eslint",
-  "env": {
-    "browser": true,
-    "node": true,
-    "jasmine": true
-  },
-  "plugins": [
-    "react"
-  ],
-  "globals": {
-    "jest": false
-  },
+  "extends": "airbnb",
   "rules": {
+    # We use _ to define private variables and methods in clases
     "no-underscore-dangle": 0,
-    "no-use-before-define": 0,
-    "quotes": [2, "single"],
-    "comma-dangle": [1, "only-multiline"],
-    "jsx-quotes": 1,
-    "react/jsx-boolean-value": 1,
-    "react/jsx-no-undef": 1,
-    "react/jsx-sort-props": 0,
-    "react/jsx-uses-react": 1,
-    "react/jsx-uses-vars": 1,
-    "react/no-did-mount-set-state": 1,
-    "react/no-did-update-set-state": 1,
-    "react/no-multi-comp": 1,
-    "react/no-unknown-property": 1,
-    "react/prop-types": 1,
-    "react/react-in-jsx-scope": 1,
-    "react/self-closing-comp": 1,
-    "react/wrap-multilines": 1
-  }
+    # This seems to be buggy we don't want eslint to check this
+    "import/no-extraneous-dependencies": 0,
+    # This is a depricated rule. So we turned off it.
+    "react/require-extension": 0,
+    # We can write JSX in anyfile we want.
+    "react/jsx-filename-extension": 0,
+    # We don't like this rule.
+    "arrow-body-style": 0,
+    # We don't like this rule. We write arrow functions only when we needed.
+    "prefer-arrow-callback": 0,
+    # We don't need to write function names always.
+    "func-names": 0,
+    # propTypes can be object
+    "react/forbid-prop-types": 0,
+  },
 }
